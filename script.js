@@ -4,8 +4,8 @@ const add = document.querySelector('.add');
  multiply = document.querySelector('.multiply')
  equal = document.querySelector('.equals')
  resultInput = document.getElementById('result')
-let a = [];
-let b = [];
+let a = '';
+let b = '';
 let operator;
 let sum; 
 
@@ -17,12 +17,12 @@ function subtract(a, b){
     return +a - +b;
 }
 
-function multiply(a, b){
-    return +a * +b;
+function multiple(a, b){
+    return parseInt(a) * parseInt(b);
 }
 
-function divide(a, b){
-    return +a / +b;
+function division(a, b){
+    return parseInt(a) / parseInt(b);
 }
 
 function operate(num1, num2, operator){
@@ -31,9 +31,9 @@ function operate(num1, num2, operator){
     }else if(operator === '-'){
         return subtract(num1, num2)
     }else if(operator === '*'){
-        return multiply(num1, num2);
+        return multiple(num1, num2);
     }else if(operator == '/'){
-        return divide(num1, num2)
+        return division(num1, num2)
     }
 }
 
@@ -41,26 +41,31 @@ const btn = document.querySelectorAll('.numbers ').forEach(btn => {
     btn.addEventListener('click', (e) => {
         if(!operator){
             a += e.target.innerText;
-            console.log(a)
+            resultInput.value = a;
         }else {
             b += e.target.innerText;
-            console.log(b)
+            resultInput.value = b;
         }
     })
 })
 
 const op = document.querySelectorAll('.operators ').forEach(op => {
     op.addEventListener('click', (e) => {
-        if(a == []){
+        if(a != '' && b != ''){
+            equals();
+        }
+        if(a == ''){
             resultInput.value = 'Error'
         }else{
             operator = e.target.innerText;
-            console.log(operator)
+            resultInput.value = operator
         }
     })
 })
 
 function equals(){
-    answer = operate(a, b, operator)
-    console.log(answer)
+    sum = operate(a, b, operator)
+    resultInput.value = sum;
+    a = sum
+    b = []
 }
