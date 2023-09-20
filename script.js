@@ -10,19 +10,19 @@ let operator;
 let sum; 
 
 function addition(a, b){
-    return a + b;
+    return +a + +b;
 }
 
 function subtract(a, b){
-    return a - b;
+    return +a - +b;
 }
 
 function multiply(a, b){
-    return a * b;
+    return +a * +b;
 }
 
 function divide(a, b){
-    return a / b;
+    return +a / +b;
 }
 
 function operate(num1, num2, operator){
@@ -61,5 +61,6 @@ const op = document.querySelectorAll('.operators ').forEach(op => {
 })
 
 function equals(){
-    operate(a, b, operator)
+    answer = operate(a, b, operator)
+    console.log(answer)
 }
