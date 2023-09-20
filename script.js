@@ -4,9 +4,10 @@ const add = document.querySelector('.add');
  multiply = document.querySelector('.multiply')
  equal = document.querySelector('.equals')
  resultInput = document.getElementById('result')
-let a;
-let b ;
+let a = [];
+let b = [];
 let operator;
+let sum; 
 
 function addition(a, b){
     return a + b;
@@ -24,24 +25,41 @@ function divide(a, b){
     return a / b;
 }
 
-function operate(num1, num2){
+function operate(num1, num2, operator){
     if(operator === '+'){
-        return add(num1, num2)
+        return addition(num1, num2)
     }else if(operator === '-'){
         return subtract(num1, num2)
     }else if(operator === '*'){
         return multiply(num1, num2);
     }else if(operator == '/'){
-        return 
+        return divide(num1, num2)
     }
 }
 
 const btn = document.querySelectorAll('.numbers ').forEach(btn => {
     btn.addEventListener('click', (e) => {
-        inputValue(e.target.innerText)
+        if(!operator){
+            a += e.target.innerText;
+            console.log(a)
+        }else {
+            b += e.target.innerText;
+            console.log(b)
+        }
     })
 })
 
-function inputValue(number){
-    resultInput.value = number;
+const op = document.querySelectorAll('.operators ').forEach(op => {
+    op.addEventListener('click', (e) => {
+        if(a == []){
+            resultInput.value = 'Error'
+        }else{
+            operator = e.target.innerText;
+            console.log(operator)
+        }
+    })
+})
+
+function equals(){
+    operate(a, b, operator)
 }
