@@ -69,3 +69,13 @@ function equals(){
     a = sum
     b = []
 }
+
+const clears = document.querySelectorAll('.clear').forEach(clears =>{
+    clears.addEventListener('click', (e) =>{
+        a = [];
+        b = [];
+        resultInput.value = 'CLEARED'
+    })
+})
+
+console.log(eval('2+2*3'));
