@@ -12,13 +12,13 @@
     <div class="calculator">
         <input type="text" id="result" readonly>
             <div class="btn">
-            <div class="operators">
-                <button class="clear">clear</button>
-                <button></button>
-                <button></button>
-                <button class="add">+</button>
-            </div>
             <div class="numbers">
+                <div class="row-0">
+                    <button class="clear">clear</button>
+                    <button></button>
+                    <button></button>
+                    <button class="add">+</button>
+                </div>
                 <div class="row-1">
                     <button>7</button>
                     <button>8</button>
@@ -37,10 +37,10 @@
                     <button>3</button>
                     <button class="subtract">-</button>
                 </div>
+                <button class="0">0</button>
+                <button class="dot">.</button>
+                <button id="equals" onclick="equals()">=</button>
             </div>
-            <button class="0">0</button>
-            <button class="dot">.</button>
-            <button class="equals" onclick="equals()">=</button>
         </div>
     </div>
 </body>

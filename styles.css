@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
-    border: 50px color red;
+    flex-wrap: wrap;
 }
 
 .calculator button{
@@ -23,4 +23,7 @@ body{
     height: 50px;
     width: 25%;
     border: 2px color black;
+}
+.equals{
+    flex-wrap: wrap;
 }

@@ -8,17 +8,12 @@ let ans = ''
 let operator;
 
 const btn = document.querySelectorAll('.numbers button').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        ans += e.target.innerText;
-        resultInput.value = ans;
-    })
-})
-
-const op = document.querySelectorAll('.operators button').forEach(op => {
-    op.addEventListener('click', (e) => {
-        ans += e.target.innerText
-        resultInput.value = ans;
-    }) 
+    if(btn.id != 'equals'){ // Excludes equal from event listener
+        btn.addEventListener('click', (e) => {
+            ans += e.target.innerText;
+            resultInput.value = ans;
+        })
+    }
 })
 
 function equals(){
