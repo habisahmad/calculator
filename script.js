@@ -6,7 +6,6 @@ const add = document.querySelector('.add');
  resultInput = document.getElementById('result')
 let ans = ''
 let operator;
-let sum; 
 
 const btn = document.querySelectorAll('.numbers ').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -28,12 +27,16 @@ const op = document.querySelectorAll('.operators ').forEach(op => {
 })
 
 function equals(){
-    resultInput.value = eval(ans);
+    try{
+        resultInput.value = eval(ans);
+    }catch{
+        resultInput.value = 'Error'
+    }
 } 
 
 const clears = document.querySelectorAll('.clear').forEach(clears =>{
     clears.addEventListener('click', (e) =>{
         ans = ''
-        resultInput.value = 'CLEARED'
+        resultInput.value = ''
     })
 })
