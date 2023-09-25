@@ -7,19 +7,14 @@ const add = document.querySelector('.add');
 let ans = ''
 let operator;
 
-const btn = document.querySelectorAll('.numbers ').forEach(btn => {
+const btn = document.querySelectorAll('.numbers button').forEach(btn => {
     btn.addEventListener('click', (e) => {
-        if(!operator){
-            ans += e.target.innerText;
-            resultInput.value = ans;
-        }else {
-            ans += e.target.innerText;
-            resultInput.value = ans;
-        }
+        ans += e.target.innerText;
+        resultInput.value = ans;
     })
 })
 
-const op = document.querySelectorAll('.operators ').forEach(op => {
+const op = document.querySelectorAll('.operators button').forEach(op => {
     op.addEventListener('click', (e) => {
         ans += e.target.innerText
         resultInput.value = ans;
@@ -31,10 +26,11 @@ function equals(){
         resultInput.value = eval(ans);
     }catch{
         resultInput.value = 'Error'
+        ans = ''
     }
 } 
 
-const clears = document.querySelectorAll('.clear').forEach(clears =>{
+const clears = document.querySelectorAll('.clear ').forEach(clears =>{
     clears.addEventListener('click', (e) =>{
         ans = ''
         resultInput.value = ''
