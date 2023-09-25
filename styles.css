@@ -1,11 +1,14 @@
 .calculator{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    border: 50px color red;
 }
 
 .calculator button{
-    width: 25%;
+    width: 100px;
     padding: 20px;
     margin: 5px;
     box-sizing: border-box;
@@ -13,22 +16,11 @@
 
 
 body{
-    background-color: #E6E6FA;
+    background-color: #2e3031;
 }
-
-
-.numbers{
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.numbers{
-    display: flex;
-}
-
-.calculator, #result {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.calculator input{
+    margin-right: 10px;
+    height: 50px;
+    width: 25%;
+    border: 2px color black;
 }
