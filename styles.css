@@ -25,6 +25,8 @@ body{
     padding: 20px;
     margin: 5px;
     box-sizing: border-box;
+    box-shadow: 5px 5px black;
+    background-color: wheat;
 }
 .calculator input{
     margin-right: 10px;
